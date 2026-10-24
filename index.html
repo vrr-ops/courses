@@ -31,7 +31,12 @@ if (k) {
   f.allow = "clipboard-write";
   document.body.appendChild(f);
 } else {
-  document.body.innerHTML = '<div class="msg"><img src="icon-512.png" alt=""><h2>Courses 2027</h2><p>Accès réservé. Utilise ton lien personnel ou demande-le à Lio.</p></div>';
+  document.body.innerHTML = '<div class="msg"><img src="icon-512.png" alt=""><h2>Courses 2027</h2><p>Colle ton lien personnel (ou ta clé) :</p><input id="kk" style="width:100%;max-width:420px;padding:12px;border-radius:10px;border:0;font-size:16px" placeholder="https://...?k=..." autocomplete="off"><br><button id="ok" style="margin-top:12px;padding:12px 28px;border-radius:10px;border:0;background:#DB217C;color:#fff;font-size:16px;font-weight:600">Ouvrir</button><p style="opacity:.7;font-size:13px">Pas de lien ? Demande-le à Lio.</p></div>';
+  document.getElementById("ok").onclick = function () {
+    var v = document.getElementById("kk").value.trim(), m = v.match(/[?&]k=([A-Za-z0-9]+)/);
+    v = m ? m[1] : v.replace(/[^A-Za-z0-9]/g, "");
+    if (v) { try { localStorage.setItem("k", v); } catch (e) {} location.replace("./?k=" + v); }
+  };
 }
 </script>
 </body>
