@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Courses 2027</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Courses 2027">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1A365D">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.png">
+<link rel="manifest" href="manifest.json">
+<style>
+html,body{margin:0;height:100%;background:#1A365D}
+iframe{position:fixed;inset:0;width:100%;height:100%;border:0;padding-top:env(safe-area-inset-top);box-sizing:border-box;background:#1A365D}
+.msg{font-family:-apple-system,Segoe UI,Roboto,sans-serif;color:#fff;text-align:center;padding:40px 20px}
+.msg img{width:120px;border-radius:24px}
+</style>
+</head>
+<body>
+<script>
+var EXEC = "https://script.google.com/macros/s/AKfycbxP0YRI4owUyeYKMM5bCpvJO5xLARthFwtYw88OgzXyR-p05Rsg6lEUGZVY_IRm3KgAMg/exec";
+var k = new URLSearchParams(location.search).get("k");
+try { if (k) localStorage.setItem("k", k); else k = localStorage.getItem("k"); } catch (e) {}
+if (k) {
+  var f = document.createElement("iframe");
+  f.src = EXEC + "?k=" + encodeURIComponent(k);
+  f.allow = "clipboard-write";
+  document.body.appendChild(f);
+} else {
+  document.body.innerHTML = '<div class="msg"><img src="icon-512.png" alt=""><h2>Courses 2027</h2><p>Accès réservé. Utilise ton lien personnel ou demande-le à Lio.</p></div>';
+}
+</script>
+</body>
+</html>
